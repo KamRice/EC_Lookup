@@ -9,13 +9,14 @@ def normalize_parcel(parcel_number: str) -> str:
 
 def is_final_ec(doc: dict) -> bool:
     category = ((doc.get("category") or {}).get("value") or "").strip().lower()
-    
-    print("\n\nCategory: ", category, " : ", settings.ec_category)
-    
+
     if category != settings.ec_category:
         return False
-    
-    print("_+_+_+_+MATCHING CATEGORY_+_+_+_+")
+    else:
+        '''
+        print("|---MATCHING CATEGORY---|")
+        print("Category: ", category, " : ", settings.ec_category)
+        '''
     return True
 
 
